@@ -41,4 +41,10 @@
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
 	</modules>
+	
+	
+	    <scm>
+        <developerConnection>scm:git:https://github.com/slittleton/pet-clinic.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
 </project>
