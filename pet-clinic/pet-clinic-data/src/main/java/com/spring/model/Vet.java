@@ -1,5 +1,17 @@
 package com.spring.model;
 
-public class Vet extends Person{
+import com.spring.model.Person;
+
+public class Vet extends Person {
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setId(long l) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

@@ -3,9 +3,10 @@ package com.spring.model.map;
 import java.util.Set;
 
 import com.spring.model.Vet;
-import com.spring.services.CrudService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+import com.spring.services.VetService;
+
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {

@@ -32,4 +32,11 @@ public class Pet  extends BaseEntity{
 		this.birthDate = birthDate;
 	}
 
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 }
