@@ -1,12 +1,11 @@
 package com.spring.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.spring.model.Owner;
 import com.spring.model.Vet;
-import com.spring.model.map.OwnerServiceMap;
-import com.spring.model.map.VetServiceMap;
 import com.spring.services.OwnerService;
 import com.spring.services.VetService;
 
@@ -15,11 +14,15 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 
-	public DataLoader() {
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
 
+	@Autowired
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
+
+
 
 	@Override
 	public void run(String... args) throws Exception {

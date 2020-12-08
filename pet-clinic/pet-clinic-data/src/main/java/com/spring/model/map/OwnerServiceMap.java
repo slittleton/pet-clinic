@@ -3,10 +3,12 @@ package com.spring.model.map;
 import java.util.List;
 import java.util.Set;
 
-import com.spring.model.Owner;
+import org.springframework.stereotype.Service;
 
+import com.spring.model.Owner;
 import com.spring.services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
