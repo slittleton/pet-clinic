@@ -33,8 +33,13 @@ public class Pet  extends BaseEntity{
 	}
 
 	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return super.getId();
+	}
+
+	public void setId(long l) {
+		super.setId(l);
+		
 	}
 
 

@@ -5,13 +5,12 @@ import com.spring.model.Person;
 public class Vet extends Person {
 
 	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return super.getId();
 	}
 
 	public void setId(long l) {
-		// TODO Auto-generated method stub
-		
-	}
+		super.setId(l);
 
+	}
 }

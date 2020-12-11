@@ -11,11 +11,10 @@ import com.spring.services.OwnerService;
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
-	@Override
-	public Set<Owner> findAll() {
-
-		return  super.findAll();
-	}
+    @Override
+    public Set<Owner> findAll() {
+        return super.findAll();
+    }
 
 	@Override
 	public Owner findById(Long id) {
@@ -26,7 +25,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public Owner save(Owner object) {
 
-		return  super.save(object.getId(), object);
+		return  super.save(object);
 	}
 
 	@Override
