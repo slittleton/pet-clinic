@@ -1,9 +1,0 @@
-SFG Repo
-https://github.com/springframeworkguru/sfg-pet-clinic
-
-My Version Repo
-https://github.com/slittleton/pet-clinic
-
-
-Token
-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
