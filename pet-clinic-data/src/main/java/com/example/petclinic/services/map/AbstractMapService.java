@@ -1,13 +1,12 @@
 package com.example.petclinic.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.example.petclinic.model.BaseEntity;
 
-public abstract class AbstractMapService<T, ID> {
+import java.util.*;
 
-    protected Map<ID, T> map = new HashMap<>();
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
+
+    protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll(){
         return new HashSet<>(map.values());
@@ -18,8 +17,21 @@ public abstract class AbstractMapService<T, ID> {
 
     }
     T save(ID id, T object){
-        map.put(id, object);
-        System.out.println("saving object:::::" + id.toString());
+        System.out.println("===== SAVING");
+        if(object != null){
+
+            if(object.getId() == null){
+                System.out.println("===== making and setting next id");
+                object.setId(getNextId());
+            }
+            System.out.println("===== adding object id and object to the map");
+            map.put(object.getId(), object);
+
+        } else {
+            throw new RuntimeException("===== Object cannot be null =========================");
+        }
+
+        System.out.println("===== Object Saved");
         return object;
     }
 
@@ -30,5 +42,15 @@ public abstract class AbstractMapService<T, ID> {
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
 
     }
+    private Long getNextId(){
+        Long nextId = null;
 
+      if(map.size()< 1){
+          nextId = 1L;
+      }else{
+          nextId = Collections.max(map.keySet()) + 1;
+      }
+        return nextId;
+
+    }
 }
